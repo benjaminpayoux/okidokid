@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <property name="acs-oauth-secret-production" type="string">7nDc7MJuOvz6igDZaRdh1Zu5ln0kB4bB</property>
+    <property name="acs-oauth-key-production" type="string">iQih6V14xuej5kvpuTmSToxVWS4IdLJq</property>
+    <property name="acs-api-key-production" type="string">udTHjokqBXF1H4154CDj496W2FoU3ZB9</property>
+    <property name="acs-oauth-secret-development" type="string">8pclI5JuehjZu6C8GMRIlbnuwalx8XHf</property>
+    <property name="acs-oauth-key-development" type="string">ybqoRzrbAPmTXxnWA5QoEG6b7Xt4SdjH</property>
+    <property name="acs-api-key-development" type="string">Wole1k4Mn9en1KhZf6GT9t31SO8tQFum</property>
+    <deployment-targets>
+        <target device="mobileweb">false</target>
+        <target device="iphone">false</target>
+        <target device="ipad">false</target>
+        <target device="android">true</target>
+        <target device="blackberry">false</target>
+    </deployment-targets>
+    <sdk-version>2.0.2.GA</sdk-version>
+    <id>com.iesa.okidokid</id>
+    <name>okidokid</name>
+    <version>1.0</version>
+    <publisher>Benjamin</publisher>
+    <url>http://www.iesamultimedia.com/</url>
+    <description>not specified</description>
+    <copyright>2012 by Benjamin</copyright>
+    <icon>appicon.png</icon>
+    <persistent-wifi>false</persistent-wifi>
+    <prerendered-icon>false</prerendered-icon>
+    <statusbar-style>default</statusbar-style>
+    <statusbar-hidden>false</statusbar-hidden>
+    <fullscreen>false</fullscreen>
+    <navbar-hidden>true</navbar-hidden>
+    <analytics>true</analytics>
+    <guid>948ecb8e-1dde-4295-9682-cc8ba0fdb6a7</guid>
+    <property name="ti.ui.defaultunit">system</property>
+    <iphone>
+        <orientations device="iphone">
+            <orientation>Ti.UI.PORTRAIT</orientation>
+        </orientations>
+        <orientations device="ipad">
+            <orientation>Ti.UI.PORTRAIT</orientation>
+            <orientation>Ti.UI.UPSIDE_PORTRAIT</orientation>
+            <orientation>Ti.UI.LANDSCAPE_LEFT</orientation>
+            <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
+        </orientations>
+    </iphone>
+    <android xmlns:android="http://schemas.android.com/apk/res/android"/>
+    <mobileweb>
+        <precache/>
+        <splash>
+            <enabled>true</enabled>
+            <inline-css-images>true</inline-css-images>
+        </splash>
+        <theme>default</theme>
+    </mobileweb>
+    <modules>
+        <module platform="commonjs" version="2.0.5">ti.cloud</module>
+    </modules>
+</ti:app>

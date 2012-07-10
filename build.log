@@ -5,13 +5,16 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.020000 seconds on emulator to get ready
+[DEBUG] waited 0.019000 seconds on emulator to get ready
 [DEBUG] com.iesa.okidokid installed? False
 [INFO] Copying CommonJS modules...
 [INFO] Copying project resources..
-[TRACE] COPYING MODIFIED FILE: D:\Development\Titanium Studio Workspace\okidokid\Resources\ui\auth\AuthView.js => D:\Development\Titanium Studio Workspace\okidokid\build\android\bin\assets\Resources\ui\auth\AuthView.js
+[TRACE] COPYING MODIFIED FILE: D:\Development\Titanium Studio Workspace\okidokid\Resources\ui\contact\ContactListView.js => D:\Development\Titanium Studio Workspace\okidokid\build\android\bin\assets\Resources\ui\contact\ContactListView.js
 [TRACE] Generating Java Classes
 [DEBUG] Processing Android resource drawables
+[TRACE] COPYING FILE: D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-long-port-hdpi\default_old.png => D:\Development\Titanium Studio Workspace\okidokid\build\android\res\drawable-long-port-hdpi\default_old_0e5a672238.png
+[TRACE] COPYING FILE: D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-long-port-ldpi\default_old_petit.png => D:\Development\Titanium Studio Workspace\okidokid\build\android\res\drawable-long-port-ldpi\default_old_petit_4fd2c87033.png
+[TRACE] COPYING FILE: D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-notlong-port-hdpi\default_old.png => D:\Development\Titanium Studio Workspace\okidokid\build\android\res\drawable-notlong-port-hdpi\default_old_0e5a672238.png
 [DEBUG] copying app icon: D:\Development\Titanium Studio Workspace\okidokid\build\android\bin\assets\Resources\appicon.png
 [DEBUG] generating theme.xml
 [DEBUG] found drawable-long-land-hdpi splash screen at D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-long-land-hdpi\default.png
@@ -34,7 +37,7 @@ Logfile initialized
 [DEBUG] copying D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-notlong-port-ldpi\default.png splash screen to D:\Development\Titanium Studio Workspace\okidokid\build\android\res\drawable-notlong-port-ldpi\background.png
 [DEBUG] found drawable-notlong-port-mdpi splash screen at D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-notlong-port-mdpi\default.png
 [DEBUG] copying D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-notlong-port-mdpi\default.png splash screen to D:\Development\Titanium Studio Workspace\okidokid\build\android\res\drawable-notlong-port-mdpi\background.png
-[DEBUG] found splash screen at D:\Development\Titanium Studio Workspace\okidokid\build\android\bin\assets\Resources\default.png
+[DEBUG] copying default splash screen
 [TRACE] Writing out AndroidManifest.xml
 [DEBUG] adding D:\Development\Titanium Studio Workspace\okidokid\build\android\gen\com\iesa\okidokid\OkidokidActivity.java to javac build list
 [DEBUG] adding D:\Development\Titanium Studio Workspace\okidokid\build\android\gen\com\iesa\okidokid\OkidokidAppInfo.java to javac build list
@@ -44,10 +47,22 @@ Logfile initialized
 [INFO] Compiling Android Resources... This could take some time
 [DEBUG] Android classes.dex built
 [DEBUG] creating unsigned apk: D:\Development\Titanium Studio Workspace\okidokid\build\android\bin\app-unsigned.apk
+[DEBUG] from resource zip => assets/Resources/images/btn/btn_connexion.png
+[DEBUG] from resource zip => assets/Resources/images/btn/btn_connexion_hover.png
+[DEBUG] from resource zip => assets/Resources/images/btn/btn_inscrire.png
+[DEBUG] from resource zip => assets/Resources/images/btn/btn_inscrire_hover.png
+[DEBUG] from resource zip => assets/Resources/images/bg.png
+[DEBUG] from resource zip => assets/Resources/images/logo-okidokid.png
 [DEBUG] from resource zip => assets/Resources/lib/controller/AuthController.js
+[DEBUG] from resource zip => assets/Resources/lib/controller/ContactController.js
 [DEBUG] from resource zip => assets/Resources/lib/controller/ProfileController.js
 [DEBUG] from resource zip => assets/Resources/lib/controller/RegistrationController.js
 [DEBUG] from resource zip => assets/Resources/ui/auth/AuthView.js
+[DEBUG] from resource zip => assets/Resources/ui/contact/ContactListView.js
+[DEBUG] from resource zip => assets/Resources/ui/contact/ContactListWindow.js
+[DEBUG] from resource zip => assets/Resources/ui/contact/ContactSearchView.js
+[DEBUG] from resource zip => assets/Resources/ui/contact/ContactSearchWindow.js
+[DEBUG] from resource zip => assets/Resources/ui/contact/ContactView.js
 [DEBUG] from resource zip => assets/Resources/ui/header/HeaderView.js
 [DEBUG] from resource zip => assets/Resources/ui/menu/MenuView.js
 [DEBUG] from resource zip => assets/Resources/ui/profile/ProfileView.js
@@ -63,8 +78,6 @@ Logfile initialized
 [DEBUG] from resource zip => assets/Resources/KS_nav_views.png
 [DEBUG] from resource zip => assets/Resources/app.js
 [DEBUG] from resource zip => assets/Resources/appicon.png
-[DEBUG] from resource zip => assets/Resources/appicon_old.png
-[DEBUG] from resource zip => assets/Resources/default.png
 [DEBUG] from resource zip => assets/Resources/default_old.png
 [DEBUG] from resource zip => assets/Resources/ti.cloud.js
 [DEBUG] from resource zip => assets/app.json
@@ -78,11 +91,14 @@ Logfile initialized
 [DEBUG] from resource zip => res/drawable-long-land-hdpi/background.png
 [DEBUG] from resource zip => res/drawable-long-land-ldpi/background.png
 [DEBUG] from resource zip => res/drawable-long-port-hdpi/background.png
+[DEBUG] from resource zip => res/drawable-long-port-hdpi/default_old_0e5a672238.png
 [DEBUG] from resource zip => res/drawable-long-port-ldpi/background.png
+[DEBUG] from resource zip => res/drawable-long-port-ldpi/default_old_petit_4fd2c87033.png
 [DEBUG] from resource zip => res/drawable-notlong-land-hdpi/background.png
 [DEBUG] from resource zip => res/drawable-notlong-land-ldpi/background.png
 [DEBUG] from resource zip => res/drawable-notlong-land-mdpi/background.png
 [DEBUG] from resource zip => res/drawable-notlong-port-hdpi/background.png
+[DEBUG] from resource zip => res/drawable-notlong-port-hdpi/default_old_0e5a672238.png
 [DEBUG] from resource zip => res/drawable-notlong-port-ldpi/background.png
 [DEBUG] from resource zip => res/drawable-notlong-port-mdpi/background.png
 [DEBUG] from JAR C:\Users\Benjamin\AppData\Roaming\Titanium\mobilesdk\win32\2.0.2.GA\android\titanium.jar => org/appcelerator/titanium/build.properties
@@ -108,7 +124,6 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.019000 seconds on emulator to get ready
+[DEBUG] waited 0.021000 seconds on emulator to get ready
 [INFO] Installing application on device
-[INFO] Application installed. Launch from drawer on Home Screen
 [INFO] Application installed. Launch from drawer on Home Screen

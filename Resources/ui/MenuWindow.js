@@ -1,10 +1,10 @@
-function MenuWindow(Cloud) {
+function MenuWindow(dic) {
 	var self = Ti.UI.createWindow({
 		navBarHidden: true
 	});
 	
 	var MenuView = require('ui/menu/MenuView');
-	var menuView = new MenuView(Cloud, self);
+	var menuView = new MenuView(dic, self);
 	self.add(menuView);
 	
 	return self;

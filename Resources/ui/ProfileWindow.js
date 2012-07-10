@@ -1,13 +1,16 @@
-//FirstView Component Constructor
-function ProfileWindow(Cloud) {
+function ProfileWindow(dic) {
+	var HeaderView = require('ui/header/HeaderView');
 	var ProfileView = require('ui/profile/ProfileView');
 	
-	//create object instance, a parasitic subclass of Observable
 	var self = Ti.UI.createWindow({
-		backgroundColor:'#FFF'
+		fullscreen: true,
+		navBarHidden: true
 	});
 	
-	var profileView = new ProfileView(Cloud);
+	var headerView = new HeaderView(dic);
+	self.add(headerView);
+	
+	var profileView = new ProfileView(dic);
 	self.add(profileView);
 	
 	return self;

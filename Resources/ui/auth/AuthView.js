@@ -1,105 +1,65 @@
-function AuthView(Cloud) {
-	var self = Ti.UI.createView({
-		layout: 'vertical',
-		backgroundColor: '#FFF',
-	});
+function AuthView(dic) {
 	
 	var AuthController = require('lib/controller/AuthController');
-	var authController = new AuthController(Cloud);
 	
-	var label_debug = Ti.UI.createLabel({
-		color: '#000',
-		height: 'auto',
-		width: 'auto'
+	var self = Ti.UI.createView({
+		backgroundImage: '/images/bg.png',
+		layout: 'vertical',
 	});
 	
-	Ti.App.addEventListener("debug.return", function(event) {
-		label_debug.setText( (event.retour === true) ? "connecté" : "non connecté" );
-	});
-	authController.debugLog();
+	var imageView = Ti.UI.createImageView({
+		url: '/images/logo-okidokid.png',
+		width: '259dp',
+		height: '49dp',
+		top: 80
+	})
 	
-	var username_label = Ti.UI.createLabel({
-		color: '#000',
-		text: 'utilisateur',
-		height: 'auto',
-		width: 'auto'
-	});
 	var username_input = Ti.UI.createTextField({
+		hintText: 'Nom d\'utilisateur ou adresse email',
+		color: '#9d9d9d',
+     	font: {fontFamily:'Helvetica', fontSize:26, fontStyle:'italic'},
 		height: 60,
 		width: 250
 	});
 	
-	var password_label = Ti.UI.createLabel({
-		color: '#000',
-		text: 'mot de passe',
-		height: 'auto',
-		width: 'auto'
-	}); 
 	var password_input = Ti.UI.createTextField({
+		hintText: 'Mot de passe',
+		color: '#9d9d9d',
+     	font: {fontFamily:'Helvetica', fontSize:26, fontStyle:'italic'},
 		passwordMask: true,
 		height: 60,
 		width: 250
 	});
 	
 	var connection_button = Ti.UI.createButton({
-		title: 'connexion',
-		height: 60,
-		width: 250
+		backgroundImage:'/images/btn/btn_connexion.png',
+		backgroundSelectedImage:'/images/btn/btn_connexion_hover.png',
+		height: 54,
+		width: 433
 	});
 	
 	var registration_button = Ti.UI.createButton({
-		title: 'créer un compte',
-		height: 60,
-		width: 250
+		backgroundImage:'/images/btn/btn_inscrire.png',
+		backgroundSelectedImage:'/images/btn/btn_inscrire_hover.png',
+		height: 33,
+		width: 262
 	});
 	
-	var menu_button = Ti.UI.createButton({
-		title: 'menu',
-		height: 60,
-		width: 250
-	});
-	
-	// debug
-	self.add(label_debug);
-	
-	self.add(username_label);
+	self.add(imageView);
 	self.add(username_input);
-	self.add(password_label);
 	self.add(password_input);
 	self.add(connection_button);
 	self.add(registration_button);
 	
-	//menu test
-	self.add(menu_button);
-	
 	connection_button.addEventListener('click', function(e) {
-		var activityIndicator = Ti.UI.createActivityIndicator({
-  			color: 'green',
-	      	font: {fontFamily:'Helvetica Neue', fontSize:26, fontWeight:'bold'},
-	      	message: 'Loading...',
-	      	style: Ti.UI.iPhone.ActivityIndicatorStyle.DARK,
-	      	top: 10,
-	      	left: 10,
-	      	height: 'auto',
-	      	width: 'auto'
-	    });
-		//activityIndicator.show();
+		dic.activityIndicator.show();
+		var authController = new AuthController(dic);
 		authController.loginUser(username_input.value, password_input.value);
 	});
 	
 	registration_button.addEventListener('click', function(e) {
 		var RegistrationWindow = require('ui/RegistrationWindow');
-		new RegistrationWindow(Cloud).open();
-	});
-	
-	menu_button.addEventListener('click', function(e) {
-		var MenuWindow = require('ui/MenuWindow');
-		var slide_it_left = Titanium.UI.createAnimation();
-	    slide_it_left.left = 150; // to put it back to the left side of the window
-	    slide_it_left.duration = 3000;
-		var menuWindow = new MenuWindow(Cloud)
-		menuWindow.open();
-		menuWindow.animate(slide_it_left);
+		new RegistrationWindow(dic).open();
 	});
 	
 	return self;

@@ -1,12 +1,15 @@
-function AuthWindow(Cloud) {
-	var self = Ti.UI.createWindow({
-		windowSoftInputMode: Ti.UI.Android.SOFT_INPUT_STATE_HIDDEN | Ti.UI.Android.SOFT_INPUT_ADJUST_PAN,
-		exitOnClose: true,
-		navBarHidden: true
-	});
+function AuthWindow(dic) {
 	
 	var AuthView = require('ui/auth/AuthView');
-	var authView = new AuthView(Cloud);
+	
+	var self = Ti.UI.createWindow({
+		fullscreen: true,
+		navBarHidden: true,
+		exitOnClose: true,
+		windowSoftInputMode: dic.softInput
+	});
+	
+	var authView = new AuthView(dic);
 	self.add(authView);
 	
 	return self;

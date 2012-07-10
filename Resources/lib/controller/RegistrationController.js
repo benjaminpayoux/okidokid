@@ -1,20 +1,19 @@
-//FirstView Component Constructor
-function RegistrationController(Cloud) {
-	//create object instance, a parasitic subclass of Observable
+function RegistrationController(dic) {
+	
 	var self = {};
 	
 	self.registerUser = function(username, email, password, confirmPassword) {
-		// example assumes you have a set of text fields named username, password, etc.
-		Cloud.Users.create({
+		dic.cloud.Users.create({
 		    username: username,
 		    email: email,
 		    password: password,
 		    password_confirmation: confirmPassword,
 		}, function (e) {
+		    dic.activityIndicator.hide();
 		    if (e.success) {
-				// user created successfully
+				dic.userProfile = e.users[0];
 				var ProfileWindow = require('ui/ProfileWindow');
-				new ProfileWindow(Cloud).open();
+				new ProfileWindow(dic).open();
 		    } else {
 		        alert('Error:\n' +
 		            ((e.error && e.message) || JSON.stringify(e)));

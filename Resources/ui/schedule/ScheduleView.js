@@ -2,8 +2,8 @@
 function ScheduleView(Cloud) {
 	//create object instance, a parasitic subclass of Observable
 	var self = Ti.UI.createView({
+		backgroundImage: '/images/bg.png',
 		layout: 'vertical',
-		backgroundColor: '#FFF',
 	});
 	
 	var labelo = Ti.UI.createLabel({

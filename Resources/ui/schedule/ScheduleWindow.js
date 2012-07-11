@@ -1,7 +1,7 @@
 function ScheduleWindow(dic) {
 	var HeaderView = require('ui/header/HeaderView');
 	var ScheduleView = require('ui/schedule/ScheduleView');
-	var ToolbarView = require('ui/toolbar/ToolbarView');
+	var FooterView = require('ui/footer/FooterView');
 	
 	var self = Ti.UI.createWindow({
 		fullscreen: true,
@@ -15,8 +15,8 @@ function ScheduleWindow(dic) {
 	var scheduleView = new ScheduleView(dic);
 	self.add(scheduleView);
 	
-	var toolbarView = new ToolbarView(dic);
-	self.add(toolbarView);
+	var footerView = new FooterView(dic);
+	self.add(footerView);
 	
 	return self;
 }

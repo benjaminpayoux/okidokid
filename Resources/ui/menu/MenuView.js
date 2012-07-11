@@ -16,6 +16,12 @@ function MenuView(dic, MenuWindow) {
 		width: 250
 	});
 	
+	var childs_button = Ti.UI.createButton({
+		title: 'Mes enfants',
+		height: 60,
+		width: 250
+	});
+	
 	var logout_button = Ti.UI.createButton({
 		title: 'Logout',
 		height: 60,
@@ -28,14 +34,21 @@ function MenuView(dic, MenuWindow) {
 		width: 250
 	});
 	
+	
 	self.add(profile_button);
 	self.add(contacts_button);
+	self.add(childs_button);
 	self.add(logout_button);
 	self.add(close_button);
 	
 	contacts_button.addEventListener('click', function(e) {
 		var ContactListWindow = require('ui/contact/ContactListWindow');
 		new ContactListWindow(dic).open();
+	});
+	
+	childs_button.addEventListener('click', function(e) {
+		var ChildListWindow = require('ui/child/ChildListWindow');
+		new ChildListWindow(dic).open();
 	});
 	
 	profile_button.addEventListener('click', function(e) {

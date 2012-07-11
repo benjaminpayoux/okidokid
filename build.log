@@ -5,11 +5,11 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.019000 seconds on emulator to get ready
+[DEBUG] waited 0.023000 seconds on emulator to get ready
 [DEBUG] com.iesa.okidokid installed? False
 [INFO] Copying CommonJS modules...
 [INFO] Copying project resources..
-[TRACE] COPYING MODIFIED FILE: D:\Development\Titanium Studio Workspace\okidokid\Resources\ui\contact\ContactListView.js => D:\Development\Titanium Studio Workspace\okidokid\build\android\bin\assets\Resources\ui\contact\ContactListView.js
+[TRACE] COPYING MODIFIED FILE: D:\Development\Titanium Studio Workspace\okidokid\Resources\ui\child\ChildActivitiesListView.js => D:\Development\Titanium Studio Workspace\okidokid\build\android\bin\assets\Resources\ui\child\ChildActivitiesListView.js
 [TRACE] Generating Java Classes
 [DEBUG] Processing Android resource drawables
 [TRACE] COPYING FILE: D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-long-port-hdpi\default_old.png => D:\Development\Titanium Studio Workspace\okidokid\build\android\res\drawable-long-port-hdpi\default_old_0e5a672238.png
@@ -47,37 +47,159 @@ Logfile initialized
 [INFO] Compiling Android Resources... This could take some time
 [DEBUG] Android classes.dex built
 [DEBUG] creating unsigned apk: D:\Development\Titanium Studio Workspace\okidokid\build\android\bin\app-unsigned.apk
+[DEBUG] from resource zip => assets/Resources/images/btn/btn_ajouter_contact.png
+[DEBUG] from resource zip => assets/Resources/images/btn/btn_ajouter_contact_hover.png
+[DEBUG] from resource zip => assets/Resources/images/btn/btn_ajouter_enfant.png
+[DEBUG] from resource zip => assets/Resources/images/btn/btn_ajouter_enfant_hover.png
+[DEBUG] from resource zip => assets/Resources/images/btn/btn_confirmalert.png
+[DEBUG] from resource zip => assets/Resources/images/btn/btn_confirmalert_hover.png
 [DEBUG] from resource zip => assets/Resources/images/btn/btn_connexion.png
 [DEBUG] from resource zip => assets/Resources/images/btn/btn_connexion_hover.png
+[DEBUG] from resource zip => assets/Resources/images/btn/btn_enregistrer.png
+[DEBUG] from resource zip => assets/Resources/images/btn/btn_enregistrer_hover.png
 [DEBUG] from resource zip => assets/Resources/images/btn/btn_inscrire.png
+[DEBUG] from resource zip => assets/Resources/images/btn/btn_inscrireON.png
+[DEBUG] from resource zip => assets/Resources/images/btn/btn_inscrireON_hover.png
 [DEBUG] from resource zip => assets/Resources/images/btn/btn_inscrire_hover.png
+[DEBUG] from resource zip => assets/Resources/images/btn/btn_modifier_photo.png
+[DEBUG] from resource zip => assets/Resources/images/btn/btn_modifier_photo_hover.png
+[DEBUG] from resource zip => assets/Resources/images/btn/btn_rechercher.png
+[DEBUG] from resource zip => assets/Resources/images/btn/btn_rechercher_hover.png
+[DEBUG] from resource zip => assets/Resources/images/btn/btn_supprimer.png
+[DEBUG] from resource zip => assets/Resources/images/btn/btn_supprimer_hover.png
+[DEBUG] from resource zip => assets/Resources/images/btn/btn_valider.png
+[DEBUG] from resource zip => assets/Resources/images/btn/btn_valider_hover.png
+[DEBUG] from resource zip => assets/Resources/images/btn/ico_add.png
+[DEBUG] from resource zip => assets/Resources/images/btn/ico_calendar.png
+[DEBUG] from resource zip => assets/Resources/images/btn/ico_menu.png
+[DEBUG] from resource zip => assets/Resources/images/btn/ico_menu_hover.png
+[DEBUG] from resource zip => assets/Resources/images/btn/ico_modifier.png
+[DEBUG] from resource zip => assets/Resources/images/btn/ico_modifier_hover.png
+[DEBUG] from resource zip => assets/Resources/images/btn/ico_notif.png
+[DEBUG] from resource zip => assets/Resources/images/Manon.png
+[DEBUG] from resource zip => assets/Resources/images/Marie.png
+[DEBUG] from resource zip => assets/Resources/images/Severin.png
 [DEBUG] from resource zip => assets/Resources/images/bg.png
+[DEBUG] from resource zip => assets/Resources/images/bg_btn_ajouter.png
+[DEBUG] from resource zip => assets/Resources/images/bg_champ_ajouter_enfant.png
+[DEBUG] from resource zip => assets/Resources/images/bg_champ_connexion.png
+[DEBUG] from resource zip => assets/Resources/images/bg_champ_inscrire.png
+[DEBUG] from resource zip => assets/Resources/images/bottom_bar.png
+[DEBUG] from resource zip => assets/Resources/images/champ_ajouter_contact.png
+[DEBUG] from resource zip => assets/Resources/images/formulaire_contact.png
+[DEBUG] from resource zip => assets/Resources/images/ico_add.png
+[DEBUG] from resource zip => assets/Resources/images/ico_addlocation.png
+[DEBUG] from resource zip => assets/Resources/images/ico_addlocation_w.png
+[DEBUG] from resource zip => assets/Resources/images/ico_ami.png
+[DEBUG] from resource zip => assets/Resources/images/ico_ami_w.png
+[DEBUG] from resource zip => assets/Resources/images/ico_arrow_down.png
+[DEBUG] from resource zip => assets/Resources/images/ico_arrow_left.png
+[DEBUG] from resource zip => assets/Resources/images/ico_arrow_right.png
+[DEBUG] from resource zip => assets/Resources/images/ico_arrow_right_small.png
+[DEBUG] from resource zip => assets/Resources/images/ico_arrow_top.png
+[DEBUG] from resource zip => assets/Resources/images/ico_basket.png
+[DEBUG] from resource zip => assets/Resources/images/ico_basket_w.png
+[DEBUG] from resource zip => assets/Resources/images/ico_bureau.png
+[DEBUG] from resource zip => assets/Resources/images/ico_bureau_w.png
+[DEBUG] from resource zip => assets/Resources/images/ico_calendar.png
+[DEBUG] from resource zip => assets/Resources/images/ico_centre.png
+[DEBUG] from resource zip => assets/Resources/images/ico_centre_w.png
+[DEBUG] from resource zip => assets/Resources/images/ico_clock_w.png
+[DEBUG] from resource zip => assets/Resources/images/ico_colorarrow.png
+[DEBUG] from resource zip => assets/Resources/images/ico_colorarrow_small.png
+[DEBUG] from resource zip => assets/Resources/images/ico_combat.png
+[DEBUG] from resource zip => assets/Resources/images/ico_combat_w.png
+[DEBUG] from resource zip => assets/Resources/images/ico_danse.png
+[DEBUG] from resource zip => assets/Resources/images/ico_danse_w.png
+[DEBUG] from resource zip => assets/Resources/images/ico_docteur.png
+[DEBUG] from resource zip => assets/Resources/images/ico_docteur_w.png
+[DEBUG] from resource zip => assets/Resources/images/ico_dot_grey.png
+[DEBUG] from resource zip => assets/Resources/images/ico_dot_pink.png
+[DEBUG] from resource zip => assets/Resources/images/ico_ecole.png
+[DEBUG] from resource zip => assets/Resources/images/ico_ecole_w.png
+[DEBUG] from resource zip => assets/Resources/images/ico_foot.png
+[DEBUG] from resource zip => assets/Resources/images/ico_foot_w.png
+[DEBUG] from resource zip => assets/Resources/images/ico_gym.png
+[DEBUG] from resource zip => assets/Resources/images/ico_gym_w.png
+[DEBUG] from resource zip => assets/Resources/images/ico_heart_w.png
+[DEBUG] from resource zip => assets/Resources/images/ico_logo.png
+[DEBUG] from resource zip => assets/Resources/images/ico_maison.png
+[DEBUG] from resource zip => assets/Resources/images/ico_maison_w.png
+[DEBUG] from resource zip => assets/Resources/images/ico_menu.png
+[DEBUG] from resource zip => assets/Resources/images/ico_menu_hover.png
+[DEBUG] from resource zip => assets/Resources/images/ico_modifier.png
+[DEBUG] from resource zip => assets/Resources/images/ico_modifier_hover.png
+[DEBUG] from resource zip => assets/Resources/images/ico_musique.png
+[DEBUG] from resource zip => assets/Resources/images/ico_musique_w.png
+[DEBUG] from resource zip => assets/Resources/images/ico_notif.png
+[DEBUG] from resource zip => assets/Resources/images/ico_phone_w.png
+[DEBUG] from resource zip => assets/Resources/images/ico_photo.png
+[DEBUG] from resource zip => assets/Resources/images/ico_photo_w.png
+[DEBUG] from resource zip => assets/Resources/images/ico_tennis.png
+[DEBUG] from resource zip => assets/Resources/images/ico_tennis_w.png
+[DEBUG] from resource zip => assets/Resources/images/ico_theatre.png
+[DEBUG] from resource zip => assets/Resources/images/ico_theatre_w.png
+[DEBUG] from resource zip => assets/Resources/images/icoapp.png
+[DEBUG] from resource zip => assets/Resources/images/jean-paul.png
 [DEBUG] from resource zip => assets/Resources/images/logo-okidokid.png
+[DEBUG] from resource zip => assets/Resources/images/logo_big.png
+[DEBUG] from resource zip => assets/Resources/images/logo_top.png
+[DEBUG] from resource zip => assets/Resources/images/onglet_jour.png
+[DEBUG] from resource zip => assets/Resources/images/onglet_jour_selected.png
+[DEBUG] from resource zip => assets/Resources/images/onglet_mois.png
+[DEBUG] from resource zip => assets/Resources/images/onglet_mois_selected.png
+[DEBUG] from resource zip => assets/Resources/images/onglet_semaine.png
+[DEBUG] from resource zip => assets/Resources/images/onglet_semaine_selected.png
+[DEBUG] from resource zip => assets/Resources/images/small-logo-okidokid.png
+[DEBUG] from resource zip => assets/Resources/images/step1.png
+[DEBUG] from resource zip => assets/Resources/images/step2.png
+[DEBUG] from resource zip => assets/Resources/images/step3.png
+[DEBUG] from resource zip => assets/Resources/images/step4.png
+[DEBUG] from resource zip => assets/Resources/images/step5.png
+[DEBUG] from resource zip => assets/Resources/images/step6.png
+[DEBUG] from resource zip => assets/Resources/images/top_barre.png
+[DEBUG] from resource zip => assets/Resources/lib/controller/ActivityController.js
 [DEBUG] from resource zip => assets/Resources/lib/controller/AuthController.js
+[DEBUG] from resource zip => assets/Resources/lib/controller/ChildController.js
 [DEBUG] from resource zip => assets/Resources/lib/controller/ContactController.js
 [DEBUG] from resource zip => assets/Resources/lib/controller/ProfileController.js
 [DEBUG] from resource zip => assets/Resources/lib/controller/RegistrationController.js
+[DEBUG] from resource zip => assets/Resources/ui/activity/ActivityAddView.js
+[DEBUG] from resource zip => assets/Resources/ui/activity/ActivityAddWindow.js
+[DEBUG] from resource zip => assets/Resources/ui/alert/step/Step1View.js
+[DEBUG] from resource zip => assets/Resources/ui/alert/step/Step2View.js
+[DEBUG] from resource zip => assets/Resources/ui/alert/step/Step3View.js
+[DEBUG] from resource zip => assets/Resources/ui/alert/AlertView.js
+[DEBUG] from resource zip => assets/Resources/ui/alert/AlertWindow.js
 [DEBUG] from resource zip => assets/Resources/ui/auth/AuthView.js
+[DEBUG] from resource zip => assets/Resources/ui/child/ChildActivitiesListView.js
+[DEBUG] from resource zip => assets/Resources/ui/child/ChildAddView.js
+[DEBUG] from resource zip => assets/Resources/ui/child/ChildAddWindow.js
+[DEBUG] from resource zip => assets/Resources/ui/child/ChildListView.js
+[DEBUG] from resource zip => assets/Resources/ui/child/ChildListWindow.js
+[DEBUG] from resource zip => assets/Resources/ui/child/ChildPortraitView.js
 [DEBUG] from resource zip => assets/Resources/ui/contact/ContactListView.js
 [DEBUG] from resource zip => assets/Resources/ui/contact/ContactListWindow.js
 [DEBUG] from resource zip => assets/Resources/ui/contact/ContactSearchView.js
 [DEBUG] from resource zip => assets/Resources/ui/contact/ContactSearchWindow.js
 [DEBUG] from resource zip => assets/Resources/ui/contact/ContactView.js
+[DEBUG] from resource zip => assets/Resources/ui/footer/FooterView.js
 [DEBUG] from resource zip => assets/Resources/ui/header/HeaderView.js
 [DEBUG] from resource zip => assets/Resources/ui/menu/MenuView.js
 [DEBUG] from resource zip => assets/Resources/ui/profile/ProfileView.js
 [DEBUG] from resource zip => assets/Resources/ui/registration/RegistrationView.js
+[DEBUG] from resource zip => assets/Resources/ui/schedule/ScheduleTabsView.js
 [DEBUG] from resource zip => assets/Resources/ui/schedule/ScheduleView.js
-[DEBUG] from resource zip => assets/Resources/ui/toolbar/ToolbarView.js
+[DEBUG] from resource zip => assets/Resources/ui/schedule/ScheduleWindow.js
 [DEBUG] from resource zip => assets/Resources/ui/AuthWindow.js
 [DEBUG] from resource zip => assets/Resources/ui/MenuWindow.js
 [DEBUG] from resource zip => assets/Resources/ui/ProfileWindow.js
 [DEBUG] from resource zip => assets/Resources/ui/RegistrationWindow.js
-[DEBUG] from resource zip => assets/Resources/ui/ScheduleWindow.js
 [DEBUG] from resource zip => assets/Resources/KS_nav_ui.png
 [DEBUG] from resource zip => assets/Resources/KS_nav_views.png
 [DEBUG] from resource zip => assets/Resources/app.js
 [DEBUG] from resource zip => assets/Resources/appicon.png
+[DEBUG] from resource zip => assets/Resources/appicon_old.png
 [DEBUG] from resource zip => assets/Resources/default_old.png
 [DEBUG] from resource zip => assets/Resources/ti.cloud.js
 [DEBUG] from resource zip => assets/app.json
@@ -124,6 +246,6 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.021000 seconds on emulator to get ready
+[DEBUG] waited 0.024000 seconds on emulator to get ready
 [INFO] Installing application on device
 [INFO] Application installed. Launch from drawer on Home Screen

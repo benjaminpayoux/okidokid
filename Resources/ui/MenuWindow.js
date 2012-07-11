@@ -1,6 +1,7 @@
 function MenuWindow(dic) {
 	var self = Ti.UI.createWindow({
-		navBarHidden: true
+		fullscreen: true,
+		navBarHidden: true,
 	});
 	
 	var MenuView = require('ui/menu/MenuView');

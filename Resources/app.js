@@ -38,7 +38,7 @@ else {
 	Ti.App.addEventListener("isLogged", function(e) {
 		if (e.isLogged === true){
 			dic.userProfile = e.userProfile;
-			var ScheduleWindow = require('ui/ScheduleWindow');
+			var ScheduleWindow = require('ui/schedule/ScheduleWindow');
 			new ScheduleWindow(dic).open();
 		}
 		else{

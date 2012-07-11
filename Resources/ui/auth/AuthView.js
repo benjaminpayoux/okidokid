@@ -9,10 +9,11 @@ function AuthView(dic) {
 	
 	var imageView = Ti.UI.createImageView({
 		url: '/images/logo-okidokid.png',
-		width: '259dp',
-		height: '49dp',
+		width: 250,
 		top: 80
 	})
+	
+	
 	
 	var username_input = Ti.UI.createTextField({
 		hintText: 'Nom d\'utilisateur ou adresse email',
@@ -34,15 +35,14 @@ function AuthView(dic) {
 	var connection_button = Ti.UI.createButton({
 		backgroundImage:'/images/btn/btn_connexion.png',
 		backgroundSelectedImage:'/images/btn/btn_connexion_hover.png',
-		height: 54,
-		width: 433
+		width: 250, height: 31
 	});
 	
 	var registration_button = Ti.UI.createButton({
 		backgroundImage:'/images/btn/btn_inscrire.png',
 		backgroundSelectedImage:'/images/btn/btn_inscrire_hover.png',
-		height: 33,
-		width: 262
+		width: 250, height: 31,
+		bottom: 10
 	});
 	
 	self.add(imageView);

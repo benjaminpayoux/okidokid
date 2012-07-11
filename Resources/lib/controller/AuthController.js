@@ -11,7 +11,7 @@ function AuthController(dic) {
 		    dic.activityIndicator.hide();
 		    if (e.success) {
 	            dic.userProfile = e.users[0];
-	            var ScheduleWindow = require('ui/ScheduleWindow');
+	            var ScheduleWindow = require('ui/schedule/ScheduleWindow');
 				new ScheduleWindow(dic).open();
 		    }
 		    else {

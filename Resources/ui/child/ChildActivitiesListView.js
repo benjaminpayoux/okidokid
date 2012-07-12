@@ -43,7 +43,9 @@ function ChildActivitiesListView(dic, child) {
 	
 	var childActivitiesTableView = Ti.UI.createTableView({
       	backgroundColor: '#D9478A',
-      	data: childActivities
+      	opacity: 0.5,
+      	data: childActivities,
+      	height: 150
     });
     
     self.add(childActivitiesTableView);

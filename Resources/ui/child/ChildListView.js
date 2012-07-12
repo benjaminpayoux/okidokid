@@ -29,7 +29,7 @@ function ChildListView(dic) {
 			
 			var childRow = Ti.UI.createTableViewRow({
 	    		className:'child', // used to improve table performance
-		        //height:110
+		        height:200
 	      	});
 	      	
 	      	var ChildPortraitView = require('ui/child/ChildPortraitView');

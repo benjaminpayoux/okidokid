@@ -1,16 +1,21 @@
 function FooterView(dic) {
 	
 	var self = Ti.UI.createView({
-		backgroundImage: '/images/bottom_bar.png',
 		bottom: 0,
-		height: 44,
+		height: 61,
 		zIndex: 100
+	});
+	
+	var bg = Ti.UI.createView({
+		backgroundImage:'/images/bottom_bar.png',
+		height: 44,
+		bottom: 0
 	});
 	
 	var schedule_button = Ti.UI.createButton({
 		backgroundImage:'/images/btn/ico_calendar.png',
-		width: 49, height: 44,
-		left: 10
+		width: 30, height: 25,
+		bottom: 5, left: 50
 	});
 	
 	var new_alert_button = Ti.UI.createButton({
@@ -20,10 +25,11 @@ function FooterView(dic) {
 	
 	var notif_button = Ti.UI.createButton({
 		backgroundImage:'/images/btn/ico_notif.png',
-		width: 47, height: 42,
-		right: 10
+		width: 28, height: 23,
+		right: 50, bottom: 5
 	});
 	
+	self.add(bg);
 	self.add(schedule_button);
 	self.add(new_alert_button);
 	self.add(notif_button);

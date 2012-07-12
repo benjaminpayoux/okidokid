@@ -5,11 +5,11 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.023000 seconds on emulator to get ready
+[DEBUG] waited 0.021000 seconds on emulator to get ready
 [DEBUG] com.iesa.okidokid installed? False
 [INFO] Copying CommonJS modules...
 [INFO] Copying project resources..
-[TRACE] COPYING MODIFIED FILE: D:\Development\Titanium Studio Workspace\okidokid\Resources\ui\child\ChildActivitiesListView.js => D:\Development\Titanium Studio Workspace\okidokid\build\android\bin\assets\Resources\ui\child\ChildActivitiesListView.js
+[TRACE] COPYING MODIFIED FILE: D:\Development\Titanium Studio Workspace\okidokid\Resources\lib\controller\ChildController.js => D:\Development\Titanium Studio Workspace\okidokid\build\android\bin\assets\Resources\lib\controller\ChildController.js
 [TRACE] Generating Java Classes
 [DEBUG] Processing Android resource drawables
 [TRACE] COPYING FILE: D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-long-port-hdpi\default_old.png => D:\Development\Titanium Studio Workspace\okidokid\build\android\res\drawable-long-port-hdpi\default_old_0e5a672238.png
@@ -169,6 +169,9 @@ Logfile initialized
 [DEBUG] from resource zip => assets/Resources/ui/alert/step/Step1View.js
 [DEBUG] from resource zip => assets/Resources/ui/alert/step/Step2View.js
 [DEBUG] from resource zip => assets/Resources/ui/alert/step/Step3View.js
+[DEBUG] from resource zip => assets/Resources/ui/alert/step/Step4View.js
+[DEBUG] from resource zip => assets/Resources/ui/alert/step/Step5View.js
+[DEBUG] from resource zip => assets/Resources/ui/alert/step/Step6View.js
 [DEBUG] from resource zip => assets/Resources/ui/alert/AlertView.js
 [DEBUG] from resource zip => assets/Resources/ui/alert/AlertWindow.js
 [DEBUG] from resource zip => assets/Resources/ui/auth/AuthView.js
@@ -246,6 +249,6 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.024000 seconds on emulator to get ready
+[DEBUG] waited 0.021000 seconds on emulator to get ready
 [INFO] Installing application on device
 [INFO] Application installed. Launch from drawer on Home Screen

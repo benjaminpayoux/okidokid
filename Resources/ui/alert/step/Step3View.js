@@ -8,11 +8,16 @@ function Step3View(dic) {
 		top: 67
 	});
 	
+	var stepImage = Ti.UI.createImageView({
+		url: '/images/step3.png'
+	});
+	
 	var label = Ti.UI.createLabel({
 		text: 'Step3'
 	});
 	
-	self.add(label);
+	self.add(stepImage);
+    self.add(label);
     
 	return self;
 }

@@ -4,14 +4,34 @@ function ContactListView(dic) {
 	var controller = new ContactController(dic);
 	
 	var self = Ti.UI.createView({
+		backgroundImage: '/images/bg.png',
 		layout:'vertical',
-		top: 80
+		top: 67
 	});
 	
-	var nouveau_contact = Ti.UI.createButton({
-		title: 'Nouveau contact',
-		height: 40
+	var title_label = Ti.UI.createLabel({
+		text: 'Mes contacts'
 	});
+	
+	var add_contact = Ti.UI.createView({
+		backgroundImage: '/images/bg_btn_ajouter.png',
+		height: 27
+	});
+	
+	var add_contact_image = Ti.UI.createImageView({
+		url: '/images/ico_addlocation_w.png',
+		width: 10, height: 10
+	});
+	
+	var add_contact_label = Ti.UI.createLabel({
+		text:'Ajouter un contact'
+	});
+	
+	add_contact.add(add_contact_image);
+	add_contact.add(add_contact_label);
+	
+	self.add(title_label);
+	self.add(add_contact);
 	
 	var sectionWaiting = Ti.UI.createTableViewSection({ headerTitle: 'En attente' });
 	
@@ -22,10 +42,10 @@ function ContactListView(dic) {
       backgroundColor:'white'
     });
 	
-	self.add(nouveau_contact);
+	
     self.add(tableView);
 	
-    nouveau_contact.addEventListener('click', function(e) {
+    add_contact.addEventListener('click', function(e) {
 		var ContactSearchWindow = require('ui/contact/ContactSearchWindow');
     	new ContactSearchWindow(dic).open();
 	});

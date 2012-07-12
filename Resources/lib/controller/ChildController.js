@@ -3,6 +3,7 @@ function ContactController(dic) {
 	//create object instance, a parasitic subclass of Observable
 	var self = {};
 	
+	
 	self.getChildsAndActivities = function() {
 		
 		Ti.App.addEventListener("childListReturn", function(e) {
@@ -60,22 +61,93 @@ function ContactController(dic) {
 		});
 	}
 	
-	self.addChild = function(child_name) {
-		dic.cloud.Objects.create({
+	self.delChild = function(child) {
+		dic.cloud.Objects.remove({
+	        classname: 'childs',
+	        id: child.id
+	    }, function (e) {
+	        if (e.success) {
+	            alert('Success');
+	        } else {
+	            alert('Error:\\n' +
+	                ((e.error && e.message) || JSON.stringify(e)));
+	        }
+	    });
+	}
+	
+	self.getChildPhoto = function(child) {
+		
+		dic.cloud.Photos.show({
+	        photo_id: child.photo_id
+	    }, function (e) {
+	        if (e.success) {
+	            var photo = e.photos[0];
+	            Ti.App.fireEvent(
+		        	"childPhotoReturn",
+		        	{ 
+	        			photo: photo
+	    		 	}
+	        	);
+	        } else {
+	            alert('Error:\\n' +
+	                ((e.error && e.message) || JSON.stringify(e)));
+	        }
+	    });
+	}
+	
+	self.getChilds = function() {
+		dic.cloud.Objects.query({
 			classname: 'childs',
-			fields: {
-				name: child_name
+			where: {
+				user_id: dic.userProfile.id
 			}
 		}, function(e) {
-			dic.activityIndicator.hide();
 			if (e.success) {
-				var ChildListWindow = require('ui/child/ChildListWindow');
-				new ChildListWindow(dic).open();
+				Ti.App.fireEvent(
+		        	"childListReturn",
+		        	{ 
+	        			childs: e.childs
+	    		 	}
+	        	);
 			} else {
 	            alert('Error:\n' +
 	                ((e.error && e.message) || JSON.stringify(e)));
 	        }
 		});
+	}
+	
+	self.addChild = function(photo, child_name) {
+		
+		dic.cloud.Photos.create({
+	        photo: photo
+	    }, function (e) {
+	        if (e.success) {
+	            var photo = e.photos[0];
+	            
+	            dic.cloud.Objects.create({
+					classname: 'childs',
+					fields: {
+						name: child_name,
+						photo_id: photo.id
+					}
+				}, function(e) {
+					dic.activityIndicator.hide();
+					if (e.success) {
+						var ChildListWindow = require('ui/child/ChildListWindow');
+						new ChildListWindow(dic).open();
+					} else {
+			            alert('Error:\n' +
+			                ((e.error && e.message) || JSON.stringify(e)));
+			        }
+				});
+	        } else {
+	            alert('Error:\\n' +
+	                ((e.error && e.message) || JSON.stringify(e)));
+	        }
+	    });
+		
+		
+		
 	}
 	
 	return self;

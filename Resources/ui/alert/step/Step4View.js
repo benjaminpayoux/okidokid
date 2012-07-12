@@ -1,4 +1,4 @@
-function Step2View(dic) {
+function Step4View(dic) {
 	
 	var ActivityController = require('lib/controller/ActivityController');
 	var controller = new ActivityController(dic);
@@ -9,19 +9,17 @@ function Step2View(dic) {
 	});
 	
 	var stepImage = Ti.UI.createImageView({
-		url: '/images/step2.png'
+		url: '/images/step4.png'
 	});
 	
 	var label = Ti.UI.createLabel({
-		text: 'Step2'
+		text: 'Step3'
 	});
 	
-	
-    
-    self.add(stepImage);
+	self.add(stepImage);
     self.add(label);
     
 	return self;
 }
 
-module.exports = Step2View;
+module.exports = Step4View;

@@ -4,12 +4,14 @@ function ChildAddView(dic) {
 	var controller = new ChildController(dic);
 	
 	var self = Ti.UI.createView({
+		backgroundImage: '/images/bg.png',
 		layout:'vertical',
 		top: 67
 	});
 	
 	var child_name_textfield = Ti.UI.createTextField({
-		hintText: 'Nom de l\'enfant'
+		hintText: 'Nom de l\'enfant',
+		width: 250
 	});
 	
 	var button_camera = Ti.UI.createButton({
@@ -17,38 +19,25 @@ function ChildAddView(dic) {
 	});
 	
 	var image_view = Ti.UI.createImageView({
-		
+		width: 50, height: 70
 	});
 	
+	self.add(image_view);
 	self.add(button_camera);
 	
 	var source_photo = "";
+	var file = null;
 	
 	button_camera.addEventListener('click', function (e) {
 		Titanium.Media.showCamera({
 		    success:function(event)
 		    {
 		        var image = event.media;
-		        var f = Titanium.Filesystem.getFile(Titanium.Filesystem.applicationDataDirectory,'camera_photo.png');
 		        
-		        f.write(image);
-		        //image_view.url = f.nativePath;
+		        file = Titanium.Filesystem.getFile(Titanium.Filesystem.applicationDataDirectory,'camera_photo.png');
+		        file.write(image);
 		        
-		        
-		 
-		        var data_to_send = { 
-		            "file": f.read(), 
-		            "name": 'camera_photo.png' 
-		        };
-		        /*xhr = Titanium.Network.createHTTPClient();
-		        xhr.setRequestHeader("enctype", "multipart/form-data");
-		        xhr.setRequestHeader("Content-Type", "image/png");
-		        xhr.open("POST","http://mydomain.com/uploadfile.php");
-		        xhr.send(data_to_send); 
-		        xhr.onload = function() {
-		            textfield.value = this.responseText;
-		            Ti.API.info(this.responseText); 
-		        };*/
+		        image_view.setImage(file.nativePath);
 		 
 		    }
 		 });
@@ -67,7 +56,7 @@ function ChildAddView(dic) {
     add_child_button.addEventListener('click', function(e) {
 		dic.activityIndicator.show();
 		var childController = new ChildController(dic);
-		childController.addChild(Titanium.Filesystem.getFile(Titanium.Filesystem.applicationDataDirectory,'camera_photo.png'), child_name_textfield.value);
+		childController.addChild(file, child_name_textfield.value);
 	});
 	
 	return self;

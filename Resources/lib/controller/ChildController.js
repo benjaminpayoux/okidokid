@@ -1,10 +1,42 @@
 //FirstView Component Constructor
-function ContactController(dic) {
+function ChildController(dic) {
 	//create object instance, a parasitic subclass of Observable
 	var self = {};
 	
 	
 	self.getChildsAndActivities = function() {
+		
+		Ti.App.addEventListener("childsAndActivities", function(e) {
+			var childs = e.childs;
+			dic.cloud.Photos.query({
+				where: {
+					user_id: dic.userProfile.id
+				}
+			}, function (e) {
+				if (e.success) {
+					if (e.photos.length > 0) {
+						for (var i = 0; i < childs.length; i++) {
+							for (var j = 0; j < e.photos.length; j++) {
+								if (e.photos[j].id === childs[i].photo_id) {
+									childs[i].photo = e.photos[j].urls.medium_640;
+								}
+							}
+						}
+						
+						
+			        }
+			        Ti.App.fireEvent(
+			        	"childsAndActivitiesReturn",
+			        	{ 
+		        			childs: childs
+		    		 	}
+		        	);
+				} else { 
+					alert('Error:\n' +
+		                ((e.error && e.message) || JSON.stringify(e)));
+		        }
+			});
+		});
 		
 		Ti.App.addEventListener("childListReturn", function(e) {
 			var childs = e.childs;
@@ -15,21 +47,20 @@ function ContactController(dic) {
 			
 			dic.cloud.Objects.query({
 				classname: 'activities',
-				ids: childs_ids
+				child_ids: childs_ids
 			}, function(e) {
 				if (e.success) {
-					
-					for (var i = 0; i < childs.length; i++) {
-						var activities = [];
-						for (var j = 0; j < e.activities.length; j++) {
-							if (e.activities[j].child_id === childs[i].id) {
-								activities.push(e.activities[j]);
+						for (var i = 0; i < childs.length; i++) {
+							var activities = [];
+							for (var j = 0; j < e.activities.length; j++) {
+								if (e.activities[j].child_id === childs[i].id) {
+									activities.push(e.activities[j]);
+								}
 							}
+							childs[i].activities = activities;
 						}
-						childs[i].activities = activities;
-					}
-					Ti.App.fireEvent(
-			        	"childsAndActivitiesReturn",
+			        Ti.App.fireEvent(
+			        	"childsAndActivities",
 			        	{ 
 		        			childs: childs
 		    		 	}
@@ -48,18 +79,42 @@ function ContactController(dic) {
 			}
 		}, function(e) {
 			if (e.success) {
-				Ti.App.fireEvent(
-		        	"childListReturn",
-		        	{ 
-	        			childs: e.childs
-	    		 	}
-	        	);
+				if (e.childs.length > 0) {
+					Ti.App.fireEvent(
+			        	"childListReturn",
+			        	{ 
+		        			childs: e.childs
+		    		 	}
+		        	);
+		        }
 			} else {
 	            alert('Error:\n' +
 	                ((e.error && e.message) || JSON.stringify(e)));
 	        }
 		});
 	}
+	
+	self.getChildActivities = function(child) {
+		dic.cloud.Objects.query({
+			classname: 'activities',
+			where: {
+				child_id: child.id
+			}
+		}, function (e) {
+	        if (e.success) {
+	        	
+	            Ti.App.fireEvent(
+		        	"childActivitiesListReturn",
+		        	{ 
+	        			activities: e.activities
+	    		 	}
+	        	);
+	        } else {
+	            alert('Error:\\n' +
+	                ((e.error && e.message) || JSON.stringify(e)));
+	        }
+	    });
+   	}
 	
 	self.delChild = function(child) {
 		dic.cloud.Objects.remove({
@@ -104,7 +159,7 @@ function ContactController(dic) {
 		}, function(e) {
 			if (e.success) {
 				Ti.App.fireEvent(
-		        	"childListReturn",
+		        	"childListReturnForAlert",
 		        	{ 
 	        			childs: e.childs
 	    		 	}
@@ -121,6 +176,7 @@ function ContactController(dic) {
 		dic.cloud.Photos.create({
 	        photo: photo
 	    }, function (e) {
+	        dic.activityIndicator.hide();
 	        if (e.success) {
 	            var photo = e.photos[0];
 	            
@@ -133,8 +189,7 @@ function ContactController(dic) {
 				}, function(e) {
 					dic.activityIndicator.hide();
 					if (e.success) {
-						var ChildListWindow = require('ui/child/ChildListWindow');
-						new ChildListWindow(dic).open();
+						alert('Enfant ajouté !');
 					} else {
 			            alert('Error:\n' +
 			                ((e.error && e.message) || JSON.stringify(e)));
@@ -153,4 +208,4 @@ function ContactController(dic) {
 	return self;
 }
 
-module.exports = ContactController;
+module.exports = ChildController;

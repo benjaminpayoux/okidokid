@@ -7,28 +7,29 @@ function AuthView(dic) {
 		layout: 'vertical',
 	});
 	
-	var imageView = Ti.UI.createImageView({
-		url: '/images/logo-okidokid.png',
+	var logo = Ti.UI.createImageView({
+		image: '/images/logo-okidokid.png',
 		width: 250,
-		top: 80
+		top: 90
 	})
 	
-	
+	var form_bg = Ti.UI.createImageView({
+		image: '/images/bg_champ_connexion.png',
+		width: 250,
+		top: 40
+	});
 	
 	var username_input = Ti.UI.createTextField({
-		hintText: 'Nom d\'utilisateur ou adresse email',
+		hintText: 'Nom d\'utilisateur',
 		color: '#9d9d9d',
-     	font: {fontFamily:'Helvetica', fontSize:26, fontStyle:'italic'},
-		height: 60,
+		top: 40,
 		width: 250
 	});
 	
 	var password_input = Ti.UI.createTextField({
+		
 		hintText: 'Mot de passe',
-		color: '#9d9d9d',
-     	font: {fontFamily:'Helvetica', fontSize:26, fontStyle:'italic'},
 		passwordMask: true,
-		height: 60,
 		width: 250
 	});
 	
@@ -42,10 +43,11 @@ function AuthView(dic) {
 		backgroundImage:'/images/btn/btn_inscrire.png',
 		backgroundSelectedImage:'/images/btn/btn_inscrire_hover.png',
 		width: 250, height: 31,
-		bottom: 10
+		top: 130
 	});
 	
-	self.add(imageView);
+	self.add(logo);
+	//self.add(form_bg);
 	self.add(username_input);
 	self.add(password_input);
 	self.add(connection_button);

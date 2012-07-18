@@ -9,7 +9,7 @@ function ContactController(dic) {
 			fields: {
 	            requester_id: dic.userProfile.id,
             	receiver_id: receiver_id,
-	            status: 0
+	            status: 1
 	        }
 		}, function (e) {
 			dic.activityIndicator.hide();
@@ -23,26 +23,34 @@ function ContactController(dic) {
 		});
 	}
 	
-	self.createRelation = function(requester_id, receiver_id) {
-		Cloud.Objects.create({
-	        classname: 'relations',
-	        fields: {
-	            requester_id: requester_id,
-            	receiver_id: receiver_id,
-	            status: 1
-	        }
-	    }, function (e) {
-	        if (e.success) {
-	            var relation = e.relations[0];
-	            alert('Success:\n' +
-	                'id: ' + relation.id + '\n' +
-	                'requester_id: ' + relation.requester_id + '\n' +
-	                'receiver_id: ' + relation.receiver_id);
-	        } else {
-	            alert('Error:\n' +
+	self.confirmContact = function(requester_id) {
+		dic.cloud.Objects.query({
+			classname: 'relations',
+			where: {
+				requester_id: requester_id,
+				receiver_id: dic.userProfile.id
+			}
+		}, function (e) {
+			if (e.success) {
+				dic.cloud.Objects.update({
+					classname: 'relations',
+					id: e.relations[0].id,
+					fields: {
+						status: 1
+					}
+				}, function (e) {
+					if (e.success) {
+						alert('Contact ajouté !');
+					} else {
+						alert('Error:\n' +
+	                		((e.error && e.message) || JSON.stringify(e)));
+					}
+				});
+			} else {
+				alert('Error:\n' +
 	                ((e.error && e.message) || JSON.stringify(e)));
-	        }
-	    });
+			}
+		});
 	}
 	
 	self.searchContact = function(searchValue) {
@@ -64,15 +72,112 @@ function ContactController(dic) {
 	    });
 	}
 	
-	self.getContacts = function() {
-		var waitingContacts = self.getWaitingContacts();
-		alert("taille" + waitingContacts.length);
-		//alert(waitingContacts[0].username);
+	self.getAddedContacts = function() {
+		
+		dic.cloud.Objects.query({
+			classname: 'relations',
+			where: {
+				requester_id: dic.userProfile.id,
+				status: 1
+			}
+		}, function (e) {
+			if (e.success) {
+				
+				var contacts_ids = '';
+				
+				if (e.relations.length > 0) {
+					for (var i = 0; i < e.relations.length; i++) {
+			        	contacts_ids += e.relations[i].receiver_id + ',';
+					}
+				}
+				
+				dic.cloud.Objects.query({
+					classname: 'relations',
+					where: {
+						receiver_id: dic.userProfile.id,
+						status: 1
+					}
+				}, function (e) {
+					if (e.success) {
+						
+						if (e.relations.length > 0) {
+							for (var i = 0; i < e.relations.length; i++) {
+					        	contacts_ids += e.relations[i].requester_id + ',';
+							}
+						}
+						
+						if (contacts_ids !== '') {
+							dic.cloud.Users.show({
+				        		user_ids: contacts_ids
+				        	}, function (e) {
+				        		if (e.success) {
+				        			Ti.App.fireEvent(
+							        	"addedContactsReturn",
+							        	{ 
+						        			contacts: e.users
+						    		 	}
+						        	);
+				        		} else {
+							        alert('Error:\n' +
+							            ((e.error && e.message) || JSON.stringify(e)));
+							    }
+				        	});
+			        	}
+						
+					} else {
+						alert('Error:\n' +
+			            ((e.error && e.message) || JSON.stringify(e)));
+					}
+				});
+				
+			} else {
+				alert('Error:\n' +
+		            ((e.error && e.message) || JSON.stringify(e)));
+			}
+		});
+	}
+	
+	self.getAskingContacts = function() {
+		
+		// on cherche tous les liens nous concernant (notre id correspond au champ requester_id)
+		dic.cloud.Objects.query({
+		    classname: 'relations',
+		    where: {
+		    	receiver_id: dic.userProfile.id,
+		    	status: 0
+		    }
+	   	}, function (e) {
+	   		if (e.success) {
+		        if (e.relations.length > 0) {
+		        	var requester_ids = '';
+			        for (var i = 0; i < e.relations.length; i++) {
+			        	requester_ids += e.relations[i].requester_id + ',';
+					}	
+			        
+			        dic.cloud.Users.show({
+		        		user_ids: requester_ids
+		        	}, function (e) {
+		        		if (e.success) {
+		        			Ti.App.fireEvent(
+					        	"askingContactsReturn",
+					        	{ 
+				        			contacts: e.users
+				    		 	}
+				        	);
+		        		} else {
+					        alert('Error:\n' +
+					            ((e.error && e.message) || JSON.stringify(e)));
+					    }
+		        	});
+	        	}
+		    } else {
+		        alert('Error:\n' +
+		            ((e.error && e.message) || JSON.stringify(e)));
+		    }
+		});
 	}
 	
 	self.getWaitingContacts = function() {
-		
-		var waitingContacts = [];
 		
 		// on cherche tous les liens nous concernant (notre id correspond au champ requester_id)
 		dic.cloud.Objects.query({
@@ -83,36 +188,33 @@ function ContactController(dic) {
 		    }
 	   	}, function (e) {
 	   		if (e.success) {
-		        
-	        	var receivers_ids = '';
-		        for (var i = 0; i < e.relations.length; i++) {
-		        	receivers_ids += e.relations[i].receiver_id + ',';
-				}	
-		        
-		        dic.cloud.Users.show({
-	        		user_ids: receivers_ids
-	        	}, function (e) {
-	        		if (e.success) {
-	        			Ti.App.fireEvent(
-				        	"waitingContactsReturn",
-				        	{ 
-			        			contacts: e.users
-			    		 	}
-			        	);
-	        		} else {
-				        alert('Error:\n' +
-				            ((e.error && e.message) || JSON.stringify(e)));
-				    }
-	        	});
-		        
-		        
+		        if (e.relations.length > 0) {
+		        	var receivers_ids = '';
+			        for (var i = 0; i < e.relations.length; i++) {
+			        	receivers_ids += e.relations[i].receiver_id + ',';
+					}	
+			        
+			        dic.cloud.Users.show({
+		        		user_ids: receivers_ids
+		        	}, function (e) {
+		        		if (e.success) {
+		        			Ti.App.fireEvent(
+					        	"waitingContactsReturn",
+					        	{ 
+				        			contacts: e.users
+				    		 	}
+				        	);
+		        		} else {
+					        alert('Error:\n' +
+					            ((e.error && e.message) || JSON.stringify(e)));
+					    }
+		        	});
+	        	}
 		    } else {
 		        alert('Error:\n' +
 		            ((e.error && e.message) || JSON.stringify(e)));
 		    }
 		});
-		
-		return waitingContacts;
 	}
 	
 	return self;

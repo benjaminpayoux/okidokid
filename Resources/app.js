@@ -14,26 +14,18 @@ if (Ti.version < 1.8 ) {
 	alert('Sorry - this application template requires Titanium Mobile SDK 1.8 or later');	  	
 }
 else {
-	var dic = {};
+	var dic = {}; // permet de passer des variables d'une fenêtre à une autre
 	
+	// 
 	var Cloud = require('ti.cloud');
 	Cloud.debug = true;  // optional; if you add this line, set it to false for production
 	dic.cloud = Cloud;
 	
 	var activityIndicator = Ti.UI.createActivityIndicator({
-		color: 'green',
-      	font: {fontFamily:'Helvetica Neue', fontSize:26, fontWeight:'bold'},
-      	message: 'Loading...',
-      	style: Ti.UI.iPhone.ActivityIndicatorStyle.DARK,
-      	top: 10,
-      	left: 10,
-      	height: 'auto',
-      	width: 'auto'
+		message: 'Chargement...'
     });
     dic.activityIndicator = activityIndicator;
     
-    var softInput = Ti.UI.Android.SOFT_INPUT_STATE_HIDDEN | Ti.UI.Android.SOFT_INPUT_ADJUST_PAN;
-    dic.softInput = softInput;
 	
 	Ti.App.addEventListener("isLogged", function(e) {
 		if (e.isLogged === true){

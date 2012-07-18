@@ -1,62 +1,69 @@
 function ContactSearchView(dic) {
 	
 	var ContactController = require('lib/controller/ContactController');
-	
-	var ContactController = require('lib/controller/ContactController');
-	var controller = new ContactController(dic);
+	var contactController = new ContactController(dic);
 	
 	var self = Ti.UI.createView({
+		backgroundImage: '/images/bg.png',
 		layout:'vertical',
 	});
 	
-	var search = Titanium.UI.createSearchBar({
-	    barColor:'#000', 
-	    showCancel:true,
-	    height:80,
-	    top: 80,
+	var search = Titanium.UI.createTextField({
+	    width:250,
+	    top: 67
+	});
+	
+	var search_button = Ti.UI.createButton({
+		backgroundImage:'/images/btn/btn_rechercher.png',
+		backgroundSelectedImage:'/images/btn/btn_rechercher_hover.png',
+		width: 250, height: 31
 	});
 	
 	var tableView = Ti.UI.createTableView({
-      backgroundColor:'white',
-      top: 200,
-      zIndex: 200
+      //backgroundColor:'white',
+      //zIndex: 200
     });
 	
 	self.add(search);
+	self.add(search_button);
 	self.add(tableView);
 	
-	search.addEventListener('return', function(e) {
+	search_button.addEventListener('click', function(e) {
 		dic.activityIndicator.show();
-		var contactController = new ContactController(dic);
-		contactController.searchContact(e.value);
+		contactController.searchContact(search.value);
 	});
 	
 	Ti.App.addEventListener("contactSearchReturn", function(e) {
 		var user = e.users[0];
 		var row = Ti.UI.createTableViewRow({
 	        className:'forumEvent', // used to improve table performance
-	        backgroundImage:'/images/logo-okidokid.png',
+	        backgroundImage:'/images/jean-paul_new.png',
 	        //rowIndex:i, // custom property, useful for determining the row during events
 	        height:110
 	      });
 	      
+	      var user_view = Ti.UI.createView({
+	      	backgroundColor: '#D73180',
+	      	opacity: 0.9,
+	      	bottom: 0
+	      });
+	      
 	      var labelUserName = Ti.UI.createLabel({
-        color:'#576996',
-        font:{fontFamily:'Arial', fontSize:26, fontWeight:'bold'},
+        color:'#FFF',
+        font:{fontSize:26, fontWeight:'bold'},
         text:user.username,
-        left:70, top: 6,
-        width:200, height: 30
+        right: 10
       });
-      row.add(labelUserName);
+      
+      user_view.add(labelUserName);
+      row.add(user_view);
       
       	row.addEventListener('click', function(e) {
 			dic.activityIndicator.show();
-			controller.addContact(user.id);
+			contactController.addContact(user.id);
       	});
       
       tableView.setData([row]);
-      
-      alert('row added !');
 	});
 	
 	return self;

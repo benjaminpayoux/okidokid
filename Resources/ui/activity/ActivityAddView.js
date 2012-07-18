@@ -86,8 +86,7 @@ function ActivityAddView(dic) {
 		dic.activityIndicator.show();
 		controller.addChildActivity(
 			dic.currentChild, 
-			activity_name_textfield.value,
-			activity_location_textfield
+			activity_name_textfield.value
 		);
 	});
 	

@@ -16,7 +16,7 @@ function HeaderView(dic) {
 	});
 	
 	var image_logo = Ti.UI.createImageView({
-		url: '/images/small-logo-okidokid.png',
+		image: '/images/small-logo-okidokid.png',
 		width: 150
 	});
 	

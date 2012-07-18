@@ -35,8 +35,8 @@ function FooterView(dic) {
 	self.add(notif_button);
 	
 	schedule_button.addEventListener('click', function(e) {
-		var MenuWindow = require('ui/MenuWindow');
-		new MenuWindow(dic).open();
+		var ScheduleWindow = require('ui/schedule/ScheduleWindow');
+		new ScheduleWindow(dic).open();
 	});
 	
 	new_alert_button.addEventListener('click', function(e) {

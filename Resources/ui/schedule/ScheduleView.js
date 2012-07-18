@@ -2,8 +2,9 @@
 function ScheduleView(Cloud) {
 	//create object instance, a parasitic subclass of Observable
 	var self = Ti.UI.createView({
-		backgroundImage: '/images/bg.png',
+		backgroundImage: '/images/schedule.jpg',
 		layout: 'vertical',
+		top: 22
 	});
 	
 	var labelo = Ti.UI.createLabel({
@@ -20,8 +21,6 @@ function ScheduleView(Cloud) {
 		width:250
 	});
 	
-	self.add(labelo);
-	self.add(calendrier_button);
 	
 	return self;
 }

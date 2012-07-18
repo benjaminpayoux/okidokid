@@ -3,28 +3,28 @@ function ProfileView(dic) {
 	var ProfileController = require('lib/controller/ProfileController');
 	var controller = new ProfileController(dic);
 	
+	
 	var self = Ti.UI.createView({
-		backgroundImage: '/images/bg.png',
+		backgroundImage: '/images/Manon.png',
+		top: 61,
 		layout:'vertical'
 	});
 	
 	var username_label = Ti.UI.createLabel({
-		color:'#000',
-		height:'auto',
-		width:'auto',
-		top: 100,
-		text: dic.userProfile.username
+		color:'#3B3B3C',
+		text: dic.userProfile.username,
+		left: 10,
+		font:{fontFamily:'Arial', fontSize:26, fontWeight:'bold'}
 	});
 	
 	var email_label = Ti.UI.createLabel({
-		color:'#000',
-		height:'auto',
-		width:'auto',
-		text: dic.userProfile.email
+		color:'#3B3B3C',
+		text: dic.userProfile.email,
+		left: 10,
+		font:{fontFamily:'Arial', fontSize:16, fontWeight:'bold'}
 	});
 	
-	self.add(username_label);
-	self.add(email_label);
+	
 	
 	var button_camera = Ti.UI.createButton({
 		title: "PHOTO"
@@ -34,7 +34,7 @@ function ProfileView(dic) {
 		
 	});
 	
-	self.add(button_camera);
+	//self.add(button_camera);
 	
 	button_camera.addEventListener('click', function (e) {
 		Titanium.Media.showCamera({
@@ -48,23 +48,21 @@ function ProfileView(dic) {
 		        
 		        
 		 
-		        var data_to_send = { 
-		            "file": f.read(), 
-		            "name": 'camera_photo.png' 
-		        };
-		        /*xhr = Titanium.Network.createHTTPClient();
-		        xhr.setRequestHeader("enctype", "multipart/form-data");
-		        xhr.setRequestHeader("Content-Type", "image/png");
-		        xhr.open("POST","http://mydomain.com/uploadfile.php");
-		        xhr.send(data_to_send); 
-		        xhr.onload = function() {
-		            textfield.value = this.responseText;
-		            Ti.API.info(this.responseText); 
-		        };*/
-		 
 		    }
 		 });
 	});
+	
+	var infos_view = Ti.UI.createView({
+		backgroundColor: '#E7E7E9',
+		layout: 'vertical',
+		top: 260,
+		opacity: 0.9
+	});
+	
+	
+	infos_view.add(username_label);
+	infos_view.add(email_label);
+	self.add(infos_view);
 	
 	return self;
 }

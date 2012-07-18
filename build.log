@@ -5,48 +5,27 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.021000 seconds on emulator to get ready
+[DEBUG] waited 0.024000 seconds on emulator to get ready
 [DEBUG] com.iesa.okidokid installed? False
 [INFO] Copying CommonJS modules...
 [INFO] Copying project resources..
-[TRACE] COPYING MODIFIED FILE: D:\Development\Titanium Studio Workspace\okidokid\Resources\lib\controller\ChildController.js => D:\Development\Titanium Studio Workspace\okidokid\build\android\bin\assets\Resources\lib\controller\ChildController.js
-[TRACE] Generating Java Classes
+[INFO] Tiapp.xml unchanged, skipping class generation
 [DEBUG] Processing Android resource drawables
-[TRACE] COPYING FILE: D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-long-port-hdpi\default_old.png => D:\Development\Titanium Studio Workspace\okidokid\build\android\res\drawable-long-port-hdpi\default_old_0e5a672238.png
-[TRACE] COPYING FILE: D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-long-port-ldpi\default_old_petit.png => D:\Development\Titanium Studio Workspace\okidokid\build\android\res\drawable-long-port-ldpi\default_old_petit_4fd2c87033.png
-[TRACE] COPYING FILE: D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-notlong-port-hdpi\default_old.png => D:\Development\Titanium Studio Workspace\okidokid\build\android\res\drawable-notlong-port-hdpi\default_old_0e5a672238.png
-[DEBUG] copying app icon: D:\Development\Titanium Studio Workspace\okidokid\build\android\bin\assets\Resources\appicon.png
-[DEBUG] generating theme.xml
 [DEBUG] found drawable-long-land-hdpi splash screen at D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-long-land-hdpi\default.png
-[DEBUG] copying D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-long-land-hdpi\default.png splash screen to D:\Development\Titanium Studio Workspace\okidokid\build\android\res\drawable-long-land-hdpi\background.png
 [DEBUG] found drawable-long-land-ldpi splash screen at D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-long-land-ldpi\default.png
-[DEBUG] copying D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-long-land-ldpi\default.png splash screen to D:\Development\Titanium Studio Workspace\okidokid\build\android\res\drawable-long-land-ldpi\background.png
 [DEBUG] found drawable-long-port-hdpi splash screen at D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-long-port-hdpi\default.png
-[DEBUG] copying D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-long-port-hdpi\default.png splash screen to D:\Development\Titanium Studio Workspace\okidokid\build\android\res\drawable-long-port-hdpi\background.png
 [DEBUG] found drawable-long-port-ldpi splash screen at D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-long-port-ldpi\default.png
-[DEBUG] copying D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-long-port-ldpi\default.png splash screen to D:\Development\Titanium Studio Workspace\okidokid\build\android\res\drawable-long-port-ldpi\background.png
 [DEBUG] found drawable-notlong-land-hdpi splash screen at D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-notlong-land-hdpi\default.png
-[DEBUG] copying D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-notlong-land-hdpi\default.png splash screen to D:\Development\Titanium Studio Workspace\okidokid\build\android\res\drawable-notlong-land-hdpi\background.png
 [DEBUG] found drawable-notlong-land-ldpi splash screen at D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-notlong-land-ldpi\default.png
-[DEBUG] copying D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-notlong-land-ldpi\default.png splash screen to D:\Development\Titanium Studio Workspace\okidokid\build\android\res\drawable-notlong-land-ldpi\background.png
 [DEBUG] found drawable-notlong-land-mdpi splash screen at D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-notlong-land-mdpi\default.png
-[DEBUG] copying D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-notlong-land-mdpi\default.png splash screen to D:\Development\Titanium Studio Workspace\okidokid\build\android\res\drawable-notlong-land-mdpi\background.png
 [DEBUG] found drawable-notlong-port-hdpi splash screen at D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-notlong-port-hdpi\default.png
-[DEBUG] copying D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-notlong-port-hdpi\default.png splash screen to D:\Development\Titanium Studio Workspace\okidokid\build\android\res\drawable-notlong-port-hdpi\background.png
 [DEBUG] found drawable-notlong-port-ldpi splash screen at D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-notlong-port-ldpi\default.png
-[DEBUG] copying D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-notlong-port-ldpi\default.png splash screen to D:\Development\Titanium Studio Workspace\okidokid\build\android\res\drawable-notlong-port-ldpi\background.png
 [DEBUG] found drawable-notlong-port-mdpi splash screen at D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-notlong-port-mdpi\default.png
-[DEBUG] copying D:\Development\Titanium Studio Workspace\okidokid\Resources\android\images\res-notlong-port-mdpi\default.png splash screen to D:\Development\Titanium Studio Workspace\okidokid\build\android\res\drawable-notlong-port-mdpi\background.png
-[DEBUG] copying default splash screen
-[TRACE] Writing out AndroidManifest.xml
-[DEBUG] adding D:\Development\Titanium Studio Workspace\okidokid\build\android\gen\com\iesa\okidokid\OkidokidActivity.java to javac build list
-[DEBUG] adding D:\Development\Titanium Studio Workspace\okidokid\build\android\gen\com\iesa\okidokid\OkidokidAppInfo.java to javac build list
-[DEBUG] adding D:\Development\Titanium Studio Workspace\okidokid\build\android\gen\com\iesa\okidokid\OkidokidApplication.java to javac build list
-[DEBUG] adding D:\Development\Titanium Studio Workspace\okidokid\build\android\gen\com\iesa\okidokid\R.java to javac build list
-[DEBUG] Building Java Sources: "D:\\Development\\Titanium Studio Workspace\\okidokid\\build\\android\\gen\\com\\iesa\\okidokid\\OkidokidActivity.java" "D:\\Development\\Titanium Studio Workspace\\okidokid\\build\\android\\gen\\com\\iesa\\okidokid\\OkidokidAppInfo.java" "D:\\Development\\Titanium Studio Workspace\\okidokid\\build\\android\\gen\\com\\iesa\\okidokid\\OkidokidApplication.java" "D:\\Development\\Titanium Studio Workspace\\okidokid\\build\\android\\gen\\com\\iesa\\okidokid\\R.java"
-[INFO] Compiling Android Resources... This could take some time
-[DEBUG] Android classes.dex built
 [DEBUG] creating unsigned apk: D:\Development\Titanium Studio Workspace\okidokid\build\android\bin\app-unsigned.apk
+[DEBUG] from resource zip => assets/Resources/images/btn/ajouter_contact.png
+[DEBUG] from resource zip => assets/Resources/images/btn/ajouter_contact_hover.png
+[DEBUG] from resource zip => assets/Resources/images/btn/ajouter_enfant.png
+[DEBUG] from resource zip => assets/Resources/images/btn/ajouter_enfant_hover.png
 [DEBUG] from resource zip => assets/Resources/images/btn/btn_ajouter_contact.png
 [DEBUG] from resource zip => assets/Resources/images/btn/btn_ajouter_contact_hover.png
 [DEBUG] from resource zip => assets/Resources/images/btn/btn_ajouter_enfant.png
@@ -89,58 +68,93 @@ Logfile initialized
 [DEBUG] from resource zip => assets/Resources/images/formulaire_contact.png
 [DEBUG] from resource zip => assets/Resources/images/ico_add.png
 [DEBUG] from resource zip => assets/Resources/images/ico_addlocation.png
+[DEBUG] from resource zip => assets/Resources/images/ico_addlocation_b.png
 [DEBUG] from resource zip => assets/Resources/images/ico_addlocation_w.png
+[DEBUG] from resource zip => assets/Resources/images/ico_aide_menu.png
+[DEBUG] from resource zip => assets/Resources/images/ico_aide_menu_hover.png
 [DEBUG] from resource zip => assets/Resources/images/ico_ami.png
+[DEBUG] from resource zip => assets/Resources/images/ico_ami_b.png
+[DEBUG] from resource zip => assets/Resources/images/ico_ami_menu.png
+[DEBUG] from resource zip => assets/Resources/images/ico_ami_menu_hover.png
 [DEBUG] from resource zip => assets/Resources/images/ico_ami_w.png
 [DEBUG] from resource zip => assets/Resources/images/ico_arrow_down.png
 [DEBUG] from resource zip => assets/Resources/images/ico_arrow_left.png
 [DEBUG] from resource zip => assets/Resources/images/ico_arrow_right.png
 [DEBUG] from resource zip => assets/Resources/images/ico_arrow_right_small.png
+[DEBUG] from resource zip => assets/Resources/images/ico_arrow_right_w.png
 [DEBUG] from resource zip => assets/Resources/images/ico_arrow_top.png
 [DEBUG] from resource zip => assets/Resources/images/ico_basket.png
 [DEBUG] from resource zip => assets/Resources/images/ico_basket_w.png
 [DEBUG] from resource zip => assets/Resources/images/ico_bureau.png
+[DEBUG] from resource zip => assets/Resources/images/ico_bureau_b.png
 [DEBUG] from resource zip => assets/Resources/images/ico_bureau_w.png
 [DEBUG] from resource zip => assets/Resources/images/ico_calendar.png
+[DEBUG] from resource zip => assets/Resources/images/ico_calendar_b.png
+[DEBUG] from resource zip => assets/Resources/images/ico_calendar_menu.png
+[DEBUG] from resource zip => assets/Resources/images/ico_calendar_menu_hover.png
 [DEBUG] from resource zip => assets/Resources/images/ico_centre.png
+[DEBUG] from resource zip => assets/Resources/images/ico_centre_b.png
 [DEBUG] from resource zip => assets/Resources/images/ico_centre_w.png
 [DEBUG] from resource zip => assets/Resources/images/ico_clock_w.png
 [DEBUG] from resource zip => assets/Resources/images/ico_colorarrow.png
 [DEBUG] from resource zip => assets/Resources/images/ico_colorarrow_small.png
 [DEBUG] from resource zip => assets/Resources/images/ico_combat.png
+[DEBUG] from resource zip => assets/Resources/images/ico_combat_b.png
 [DEBUG] from resource zip => assets/Resources/images/ico_combat_w.png
+[DEBUG] from resource zip => assets/Resources/images/ico_contact_menu.png
+[DEBUG] from resource zip => assets/Resources/images/ico_contact_menu_hover.png
 [DEBUG] from resource zip => assets/Resources/images/ico_danse.png
+[DEBUG] from resource zip => assets/Resources/images/ico_danse_b.png
 [DEBUG] from resource zip => assets/Resources/images/ico_danse_w.png
+[DEBUG] from resource zip => assets/Resources/images/ico_deconnexion_menu.png
+[DEBUG] from resource zip => assets/Resources/images/ico_deconnexion_menu_hover.png
 [DEBUG] from resource zip => assets/Resources/images/ico_docteur.png
+[DEBUG] from resource zip => assets/Resources/images/ico_docteur_b.png
 [DEBUG] from resource zip => assets/Resources/images/ico_docteur_w.png
 [DEBUG] from resource zip => assets/Resources/images/ico_dot_grey.png
 [DEBUG] from resource zip => assets/Resources/images/ico_dot_pink.png
 [DEBUG] from resource zip => assets/Resources/images/ico_ecole.png
+[DEBUG] from resource zip => assets/Resources/images/ico_ecole_b.png
 [DEBUG] from resource zip => assets/Resources/images/ico_ecole_w.png
 [DEBUG] from resource zip => assets/Resources/images/ico_foot.png
+[DEBUG] from resource zip => assets/Resources/images/ico_foot_b.png
 [DEBUG] from resource zip => assets/Resources/images/ico_foot_w.png
 [DEBUG] from resource zip => assets/Resources/images/ico_gym.png
+[DEBUG] from resource zip => assets/Resources/images/ico_gym_b.png
 [DEBUG] from resource zip => assets/Resources/images/ico_gym_w.png
 [DEBUG] from resource zip => assets/Resources/images/ico_heart_w.png
 [DEBUG] from resource zip => assets/Resources/images/ico_logo.png
 [DEBUG] from resource zip => assets/Resources/images/ico_maison.png
+[DEBUG] from resource zip => assets/Resources/images/ico_maison_b.png
 [DEBUG] from resource zip => assets/Resources/images/ico_maison_w.png
 [DEBUG] from resource zip => assets/Resources/images/ico_menu.png
 [DEBUG] from resource zip => assets/Resources/images/ico_menu_hover.png
 [DEBUG] from resource zip => assets/Resources/images/ico_modifier.png
 [DEBUG] from resource zip => assets/Resources/images/ico_modifier_hover.png
+[DEBUG] from resource zip => assets/Resources/images/ico_modifier_select.png
 [DEBUG] from resource zip => assets/Resources/images/ico_musique.png
+[DEBUG] from resource zip => assets/Resources/images/ico_musique_b.png
 [DEBUG] from resource zip => assets/Resources/images/ico_musique_w.png
 [DEBUG] from resource zip => assets/Resources/images/ico_notif.png
+[DEBUG] from resource zip => assets/Resources/images/ico_notif_b.png
+[DEBUG] from resource zip => assets/Resources/images/ico_notif_menu.png
+[DEBUG] from resource zip => assets/Resources/images/ico_notif_menu_hover.png
 [DEBUG] from resource zip => assets/Resources/images/ico_phone_w.png
 [DEBUG] from resource zip => assets/Resources/images/ico_photo.png
+[DEBUG] from resource zip => assets/Resources/images/ico_photo_b.png
 [DEBUG] from resource zip => assets/Resources/images/ico_photo_w.png
+[DEBUG] from resource zip => assets/Resources/images/ico_profil_menu.png
+[DEBUG] from resource zip => assets/Resources/images/ico_profil_menu_hover.png
+[DEBUG] from resource zip => assets/Resources/images/ico_suppr_w.png
 [DEBUG] from resource zip => assets/Resources/images/ico_tennis.png
+[DEBUG] from resource zip => assets/Resources/images/ico_tennis_b.png
 [DEBUG] from resource zip => assets/Resources/images/ico_tennis_w.png
 [DEBUG] from resource zip => assets/Resources/images/ico_theatre.png
+[DEBUG] from resource zip => assets/Resources/images/ico_theatre_b.png
 [DEBUG] from resource zip => assets/Resources/images/ico_theatre_w.png
 [DEBUG] from resource zip => assets/Resources/images/icoapp.png
 [DEBUG] from resource zip => assets/Resources/images/jean-paul.png
+[DEBUG] from resource zip => assets/Resources/images/jean-paul_new.png
 [DEBUG] from resource zip => assets/Resources/images/logo-okidokid.png
 [DEBUG] from resource zip => assets/Resources/images/logo_big.png
 [DEBUG] from resource zip => assets/Resources/images/logo_top.png
@@ -150,6 +164,7 @@ Logfile initialized
 [DEBUG] from resource zip => assets/Resources/images/onglet_mois_selected.png
 [DEBUG] from resource zip => assets/Resources/images/onglet_semaine.png
 [DEBUG] from resource zip => assets/Resources/images/onglet_semaine_selected.png
+[DEBUG] from resource zip => assets/Resources/images/schedule.jpg
 [DEBUG] from resource zip => assets/Resources/images/small-logo-okidokid.png
 [DEBUG] from resource zip => assets/Resources/images/step1.png
 [DEBUG] from resource zip => assets/Resources/images/step2.png
@@ -159,6 +174,7 @@ Logfile initialized
 [DEBUG] from resource zip => assets/Resources/images/step6.png
 [DEBUG] from resource zip => assets/Resources/images/top_barre.png
 [DEBUG] from resource zip => assets/Resources/lib/controller/ActivityController.js
+[DEBUG] from resource zip => assets/Resources/lib/controller/AlertController.js
 [DEBUG] from resource zip => assets/Resources/lib/controller/AuthController.js
 [DEBUG] from resource zip => assets/Resources/lib/controller/ChildController.js
 [DEBUG] from resource zip => assets/Resources/lib/controller/ContactController.js
@@ -225,7 +241,9 @@ Logfile initialized
 [DEBUG] from resource zip => res/drawable-notlong-port-hdpi/background.png
 [DEBUG] from resource zip => res/drawable-notlong-port-hdpi/default_old_0e5a672238.png
 [DEBUG] from resource zip => res/drawable-notlong-port-ldpi/background.png
+[DEBUG] from resource zip => res/drawable-notlong-port-ldpi/default_old_0e5a672238.png
 [DEBUG] from resource zip => res/drawable-notlong-port-mdpi/background.png
+[DEBUG] from resource zip => res/drawable-notlong-port-mdpi/default_old_0e5a672238.png
 [DEBUG] from JAR C:\Users\Benjamin\AppData\Roaming\Titanium\mobilesdk\win32\2.0.2.GA\android\titanium.jar => org/appcelerator/titanium/build.properties
 [DEBUG] from JAR C:\Users\Benjamin\AppData\Roaming\Titanium\mobilesdk\win32\2.0.2.GA\android\titanium.jar => org/appcelerator/titanium/res/drawable/background.png
 [DEBUG] from JAR C:\Users\Benjamin\AppData\Roaming\Titanium\mobilesdk\win32\2.0.2.GA\android\titanium.jar => org/appcelerator/titanium/res/drawable/btn_check_buttonless_on.png
@@ -249,6 +267,6 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.021000 seconds on emulator to get ready
+[DEBUG] waited 0.023000 seconds on emulator to get ready
 [INFO] Installing application on device
 [INFO] Application installed. Launch from drawer on Home Screen
